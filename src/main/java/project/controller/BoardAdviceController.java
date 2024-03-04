@@ -87,11 +87,8 @@ public class BoardAdviceController extends HttpServlet {
 		case "detailBoardAdvice": {
 			bid = Integer.parseInt(request.getParameter("bid"));
 			boardAdv = b1Svc.getBoardAdvice(bid);
-			 String uidParameter = request.getParameter("uid");
-			    if (uidParameter != null && !uidParameter.equals(sessUid)) {
-			        b1Svc.increaseViewCount(bid);
-			    }
-			
+			b1Svc.increaseViewCount(bid);
+
 			request.setAttribute("board", boardAdv);
 
 			rd = request.getRequestDispatcher("/WEB-INF/view/boardAdvice/detailAdvice.jsp");
