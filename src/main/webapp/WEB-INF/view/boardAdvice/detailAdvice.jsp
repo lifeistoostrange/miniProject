@@ -48,6 +48,9 @@ function deleteFunc(bid) {
 						<h5>${board.title}</h5>
 						<h6>글번호: ${board.bid} // ${fn:replace(board.modTime, "T", "")}</h6>
 					</div>
+					<div class="col-4 text-end">
+						<h5>작성자: ${board.uid}</h5>
+					</div>
 					<hr>
 					<div class="col-12">${fn:replace(board.content, newline, '<br>')}
 					</div>

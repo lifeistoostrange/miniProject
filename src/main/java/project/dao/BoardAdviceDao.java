@@ -131,19 +131,22 @@ public class BoardAdviceDao {
 	}
 	
 	// field 값은 view 또는 reply
-	public void increaseCount(String field, int bid) {
-		Connection conn = getConnection();
-		String sql = "UPDATE boardadvice SET " + field + "Count=" + field + "Count+1 WHERE bid=?";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, bid);
-			
-			pstmt.executeUpdate();
-			pstmt.close(); conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	   public void increaseCount(String field, int bid) {
+		      Connection conn = getConnection();
+		      String sql = "UPDATE boardadvice SET ? = ? +1 WHERE bid=?";
+		      try {
+		         PreparedStatement pstmt = conn.prepareStatement(sql);
+		         pstmt.setString(1, field);
+		         pstmt.setString(2, field);
+		         pstmt.setInt(3, bid);
+		         
+		         pstmt.executeUpdate();
+		         pstmt.close(); conn.close();
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+		   }
+		 
 	
 	public int getBoardAdviceCount(String field, String query) {
 		Connection conn = getConnection();

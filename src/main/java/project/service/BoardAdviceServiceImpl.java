@@ -49,7 +49,7 @@ public class BoardAdviceServiceImpl implements BoardAdviceService {
 
 	@Override
 	public void increaseReplyCount(int bid) {
-		bDao.increaseCount("replyCount", bid);
+		bDao.increaseCount("reply", bid);
 	}
 
 }

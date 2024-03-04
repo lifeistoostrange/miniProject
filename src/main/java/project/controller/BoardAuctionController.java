@@ -19,7 +19,8 @@ import java.util.List;
 
 @WebServlet({ "/mini/board/listAuction", "/mini/board/insertAuction", "/mini/board/updateAuction",
     "/mini/board/deleteAuction", "/mini/board/detailAuction", "/mini/board/listBuy",
-    "/mini/board/insertBuy", "/mini/board/updateBuy", "/mini/board/deleteBuy", "/mini/board/detailBuy" })
+    "/mini/board/insertBuy", "/mini/board/updateBuy", "/mini/board/deleteBuy", "/mini/board/detailBuy",
+    "/mini/board/qna"})
 public class BoardAuctionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private BoardAuctionService bAucSvc = new BoardAuctionServiceImpl();
